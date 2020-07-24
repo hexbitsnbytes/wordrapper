@@ -11,7 +11,7 @@ while IFS= read line; do
     if [ $counter -eq 0 ]; then
         echo $line > result.txt
     elif [ $(( $counter % 2 )) -eq 0 ]; then
-        echo $line | sed 's/\(.\)$/\1\n/' >>  result.txt
+        echo $line | sed 's/\(.\)$/\1\\\n/' >>  result.txt
     else 
         echo $line >> result.txt
     fi
